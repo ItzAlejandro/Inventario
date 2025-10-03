@@ -1,0 +1,14 @@
+@if (!list) {
+  <ng-container ></ng-container>
+}
+@else if (list.length===0) {
+    <ng-container>
+      <div class="flex justify-content-center mt-4">
+        <mat-card>
+          <mat-card-content>No existen  {{title}} para mostrar</mat-card-content>
+        </mat-card>
+      </div>
+    </ng-container>
+}@else{
+  <ng-content select="[contenido]"></ng-content>
+}

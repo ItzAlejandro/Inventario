@@ -1,0 +1,17 @@
+  <shared-generic-search-create (filtroEmiter)="onPageChange($event)"
+  (Create)="RedirectUrl($event)"
+  [header]="'Productos'" [title]="'producto'"></shared-generic-search-create>
+
+    <shared-generic-list [list]="listaProductos" [title]="'productos'">
+      <ng-container contenido>
+        <tabla-productos
+              [data]="listaProductos"
+              [cantidadTotal]="cantidadTotal"
+              (searchId)="RedirecSearchUrl($event)"
+              (updateId)="RedirecUpdatetUrl($event)"
+              (deleteId)="EliminarProducto($event)"
+              (filtroEmiter)="onPageChange($event)"
+              tableTitle="Productos">>
+      </tabla-productos>
+      </ng-container>
+    </shared-generic-list>

@@ -1,0 +1,20 @@
+  <div class="p-3 grid">
+  <h1 class="text-2xl font-bold bg-aquamarine p-2 rounded-md">{{header}}</h1>
+
+  <span class="example-spacer"></span>
+
+  <button mat-fab extended style="background-color: #3c96c0; color: white;"
+         (click)="Crear(true)">
+      <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="add"></mat-icon>
+        <div style="display: flex; align-items: center;">
+
+          <span>Crear {{title}}</span>
+      </div>
+  </button>
+</div>
+<div class="grid p-1">
+  <mat-form-field class="col-12 sm:col-11 md:col-6 lg:col-12 xl:col-12">
+    <mat-label>Buscar {{title}}</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Buscar..." autocomplete="off">
+  </mat-form-field>
+</div>

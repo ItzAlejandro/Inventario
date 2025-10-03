@@ -1,0 +1,98 @@
+  <div class="container-login100">
+<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54"
+     style="
+       border-radius: 4%;
+       border: 1px solid #1a6f91;
+       box-shadow: 0 4px 12px rgba(25, 143, 189, 0.3);
+     ">
+
+      <form class="grid" [formGroup]="transaccionForm" autocomplete="off" >
+        <span class="login100-form-title p-b-49">{{title}} Transacción</span>
+
+          <div class="col-12 md:col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Tipo de Transacción</mat-label>
+              <mat-select formControlName="tipoTransaccion">
+                <mat-option value="1">COMPRA</mat-option>
+                <mat-option value="2">VENTA</mat-option>
+              </mat-select>
+              <mat-error>{{viewErrors('operationMode','Tipo de Transacción')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 md:col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Producto</mat-label>
+              <mat-select formControlName="producto" (selectionChange)="cargarInformacion()">
+                <mat-option [value]="null">-- Seleccione un Producto --</mat-option>
+                  @for (item of productos; track $index) {
+                  <mat-option [value]="item.id">{{ item.nombre }}</mat-option>
+                  }
+              </mat-select>
+              <mat-error>{{viewErrors('producto','Producto')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Stock</mat-label>
+              <input matInput formControlName="stock" />
+              <mat-error>{{viewErrors('stock','Stock')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Cantidad</mat-label>
+              <input type="number" matInput formControlName="cantidad" (blur)="ValidarCantidad()">
+              <mat-error>{{viewErrors('cantidad','Cantidad')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Detalle</mat-label>
+                <textarea matInput formControlName="detalle"></textarea>
+              <mat-error>{{viewErrors('cantidad','Cantidad')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Precio</mat-label>
+              <input matInput formControlName="precio" />
+              <mat-error>{{viewErrors('precio','Precio')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Precio Total</mat-label>
+              <input  matInput formControlName="precioTotal" />
+              <mat-error>{{viewErrors('precioTotal','Cantidad')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 flex justify-content-end mt-4">
+
+              <button mat-fab extended style="background-color: rgb(50, 116, 207); color: white;"
+                     (click)="cancelbutton()"  >
+                    <div style="display: flex; align-items: center;">
+                      <mat-icon>cancel</mat-icon>
+                      <span>Cancelar</span>
+                    </div>
+              </button>
+              <div class="p-1"></div>
+
+              <button mat-fab extended style="background-color: rgb(50, 116, 207); color: white;"
+                     (click)="Submit()" [disabled]="transaccionForm.invalid">
+                    <div style="display: flex; align-items: center;">
+                        <mat-icon>save</mat-icon>
+                      <span>Guardar</span>
+                    </div>
+              </button>
+          </div>
+
+      </form>
+    </div>
+  </div>
+
+

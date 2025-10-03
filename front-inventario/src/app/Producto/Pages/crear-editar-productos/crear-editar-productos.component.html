@@ -1,0 +1,85 @@
+  <div class="container-login100">
+<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54"
+     style="
+       border-radius: 4%;
+       border: 1px solid #1a6f91;
+       box-shadow: 0 4px 12px rgba(25, 143, 189, 0.3);
+     ">
+
+      <form class="grid" [formGroup]="productoForm" autocomplete="off" >
+        <span class="login100-form-title p-b-49">{{title}} Producto</span>
+          <div class="col-12 md:col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Nombre</mat-label>
+              <input matInput formControlName="nombre" />
+              <mat-error>{{viewErrors('nombre','Nombre')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 md:col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Descripción</mat-label>
+              <input matInput formControlName="descripcion" />
+              <mat-error>{{viewErrors('descripcion','Descripción')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-12 md:col-12">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Categoria</mat-label>
+              <input matInput  formControlName="categoria" />
+              <mat-error>{{viewErrors('categoria','Categoria')}}</mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Precio</mat-label>
+              <input matInput formControlName="precio" />
+              <mat-error>{{viewErrors('precio','Precio')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-12 md:col-6">
+            <mat-form-field appearance="outline" class="w-full">
+              <mat-label>Stock</mat-label>
+              <input matInput formControlName="stock" />
+              <mat-error>{{viewErrors('stock','Stock')}}</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-6 ">
+              <div class="flex-1 surface-100 border-round shadow-1">
+                <shared-get-photo
+                [urlCurrentImage]="imageUrlMoment"
+                [loadingButton]="true"
+                titulo="Agregar Foto 1"
+                (selectedFile) = "selectedFile($event)"
+                >
+                </shared-get-photo>
+              </div>
+          </div>
+
+
+
+          <div class="col-12 flex justify-content-end mt-4">
+
+              <button mat-fab extended style="background-color: rgb(50, 116, 207); color: white;"
+                     (click)="cancelbutton()"  >
+                    <div style="display: flex; align-items: center;">
+                      <mat-icon>cancel</mat-icon>
+                      <span>Cancelar</span>
+                    </div>
+              </button>
+              <div class="p-1"></div>
+
+              <button mat-fab extended style="background-color: rgb(50, 116, 207); color: white;"
+                     (click)="Submit()" [disabled]="productoForm.invalid">
+                    <div style="display: flex; align-items: center;">
+                        <mat-icon>save</mat-icon>
+                      <span>Guardar</span>
+                    </div>
+              </button>
+          </div>
+
+      </form>
+    </div>
+  </div>

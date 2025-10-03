@@ -1,0 +1,63 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '350px' }" style="color: #0d1130;">
+    <mat-toolbar color="primary">
+      <span>Menú</span>
+      <span class="spacer"></span>
+    </mat-toolbar>
+
+    <mat-nav-list class="aria-label">
+      <ng-container *ngFor="let item of sidebar">
+        <ng-container>
+          <mat-list-item
+            *ngIf="!item.subitems; else subitemTemplate"
+            [routerLink]="item.url"
+            (click)="sidenav.toggle()"
+          >
+            <mat-icon matListItemIcon svgIcon="{{ item.icon }}"></mat-icon>
+            {{ item.label }}
+          </mat-list-item>
+
+          <ng-template #subitemTemplate>
+            <mat-list-item (click)="toggleSublist(item)">
+              <div class="w-full flex align-items-center justify-content-between">
+                <div class="flex align-items-center gap-2">
+                  <mat-icon matListItemIcon fontIcon="{{ item.icon }}"></mat-icon>
+                  {{ item.label }}
+                </div>
+                <div>
+                  <mat-icon *ngIf="item.expanded" matSuffix>expand_less</mat-icon>
+                  <mat-icon *ngIf="!item.expanded" matSuffix>expand_more</mat-icon>
+                </div>
+              </div>
+            </mat-list-item>
+
+            <mat-nav-list *ngIf="item.expanded" class="grid">
+              <ng-container *ngFor="let subitem of item.subitems">
+                <mat-list-item
+                  [routerLink]="subitem.url"
+                  (click)="sidenav.toggle()"
+                >
+                  <div class="flex flex-row flex-wrap ml-3">
+                    <mat-icon matListItemIcon fontIcon="{{ subitem.icon }}"></mat-icon>
+                    <span class="pl-3">{{ subitem.label }}</span>
+                  </div>
+                </mat-list-item>
+              </ng-container>
+            </mat-nav-list>
+          </ng-template>
+        </ng-container>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary" style="background-color: hsl(0, 0%, 61%)">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="spacer"></span>
+  </mat-toolbar>
+
+  <div class="container min-h-screen">
+    <ng-content></ng-content>
+  </div>
+</mat-sidenav-container>

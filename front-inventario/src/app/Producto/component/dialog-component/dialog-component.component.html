@@ -1,0 +1,44 @@
+<h2 mat-dialog-title>Información Producto</h2>
+<mat-dialog-content class="mat-typography">
+  <div *ngIf="producto">
+    <mat-list>
+      <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Nombre Producto:</span>
+          <span class="p-text-secondary">{{producto.nombre}}</span>
+        </div>
+      </mat-list-item>
+        <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Descripción:</span>
+          <span class="p-text-secondary">{{producto.descripcion}}</span>
+        </div>
+      </mat-list-item>
+        <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Categoria:</span>
+          <span class="p-text-secondary">{{producto.categoria}}</span>
+        </div>
+      </mat-list-item>
+        <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Fecha:</span>
+          <span>{{producto.fechaCreacion | date:'short' }}</span>
+        </div>
+      </mat-list-item>
+        <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Precio:</span>
+            <span>{{producto.precio  }}</span>
+        </div>
+      </mat-list-item>
+
+              <mat-list-item>
+        <div matListItemLine  class="flex align-items-center mb-2">
+          <span class="min-w-12rem text-right mr-3">Stock:</span>
+          <span>{{producto.stock  }}</span>
+        </div>
+      </mat-list-item>
+
+    </mat-list>
+</div>

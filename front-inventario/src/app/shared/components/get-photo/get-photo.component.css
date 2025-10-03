@@ -1,0 +1,55 @@
+.icon-button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.icon-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.check {
+  color: #555;
+}
+
+.image-container {
+  border: 1px dashed #ccc;
+  width: 170px;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.image-container:hover {
+  border-color: #999;
+}
+
+.placeholder-image {
+  width: 150px;
+  height: 150px;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .image-container {
+    width: 100%;
+    max-width: 170px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="p-1">
+  <h5 class="mb-3">Imagen</h5>
+
+  <div class="flex flex-column md:flex-row">
+    <!-- Columna de botones a la izquierda -->
+    <div *ngIf="loadingButton" class="flex flex-row md:flex-column gap-3 mb-3 md:mb-0 md:mr-4">
+      <div class="icon-button">
+        <button mat-icon-button [matTooltip]="titulo" (click)="cargarFoto.click()">
+          <mat-icon>add_a_photo</mat-icon>
+        </button>
+        <input type="file" hidden #cargarFoto accept="image/*" (change)="update($event)" />
+      </div>
+    </div>
+
+    <div class="flex flex-column md:flex-row gap-3 w-full">
+      <!-- Primera imagen -->
+      <div class="image-container p-2 border-round">
+        <ng-container *ngIf="imageBase64; else checkUrl">
+          <img [src]="imageBase64" width="150" height="150" class="border-round" />
+        </ng-container>
+
+        <ng-template #checkUrl>
+          <ng-container *ngIf="urlCurrentImage; else placeholder">
+            <img [src]="urlCurrentImage" width="150" height="150" class="border-round" />
+          </ng-container>
+        </ng-template>
+
+        <ng-template #placeholder>
+          <div class="placeholder-image">
+            <img src="default.jpg" width="150" height="150" class="border-round" />
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
