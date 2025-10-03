@@ -24,24 +24,24 @@ ng serve
 ## Evidencias
 1. Listado dinámico de productos y transacciones con paginación.
 
-![Listado de productos](https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg)
+![Listado de productos](https://github.com/ItzAlejandro/Inventario/blob/master/Imagenes/1.%20Listado-paginado.jpg)
 
 
 2. Pantalla para la creación de productos.
 
-![Creación productos](https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg)
+![Creación productos](https://github.com/ItzAlejandro/Inventario/blob/master/Imagenes/2.CREAR-PRODUCTO.jpg)
 
 3. Pantalla para la edición de productos.
 
-![Editar productos](https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg)
+![Editar productos](https://github.com/ItzAlejandro/Inventario/blob/master/Imagenes/3.%20Editar-producto.jpg)
 
 4. Pantalla para la creación de transacciones.
 
-![Creación transacciones](https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg)
+![Creación transacciones](https://github.com/ItzAlejandro/Inventario/blob/master/Imagenes/4.%20Creacion-Transaccion.jpg)
 
 5. Pantalla para la edición de transacciones.
 
 ![Editar transacciones]
 6. Pantalla de filtros filtros.
 
-![filtros filtros](https://images.squarespace-cdn.com/content/v1/60f1a490a90ed8713c41c36c/1629223610791-LCBJG5451DRKX4WOB4SP/37-design-powers-url-structure.jpeg)
+![filtros filtros](https://github.com/ItzAlejandro/Inventario/blob/master/Imagenes/6.Filtros.jpg)
